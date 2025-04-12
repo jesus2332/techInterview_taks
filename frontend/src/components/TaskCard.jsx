@@ -42,10 +42,10 @@ const TaskCard = ({ task, onDelete }) => {
     : 'Sin fecha límite';
 
   return (
-    <Card className="mb-4 shadow-md hover:shadow-lg transition-shadow duration-200">
+    <Card className="mb-4 shadow-md hover:shadow-lg transition-shadow duration-200 ">
       <CardHeader>
         <div className="flex justify-between items-start">
-          <CardTitle className="text-lg font-semibold">{task.titulo}</CardTitle>
+          <CardTitle className="text-lg font-semibold max-w-[120px] text-pretty hyphens-auto break-words">{task.titulo}</CardTitle>
           <div className="flex space-x-2">
              <Badge variant={getPriorityBadgeVariant(task.prioridad_nombre)}>
                {task.prioridad_nombre || 'N/A'}
@@ -56,7 +56,7 @@ const TaskCard = ({ task, onDelete }) => {
           </div>
         </div>
         {task.descripcion && (
-          <CardDescription className="text-sm text-gray-600 mt-1">
+          <CardDescription className="text-sm text-gray-600 mt-1 max-w-[300px] text-pretty hyphens-auto break-words">
             {task.descripcion}
           </CardDescription>
         )}
